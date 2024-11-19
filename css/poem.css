@@ -127,6 +127,8 @@ strong {
     background: var(--medblack) no-repeat;
     background-size: cover;
     background-attachment: fixed;
+
+    box-shadow: inset 2px 2px 50px #000000a3;
 }
 
 #imgA {
@@ -169,7 +171,7 @@ strong {
 }
 
 .imgArt {
-    background-color: #ffffffed;
+    background-color: #ffffffe9;
     color: var(--darkblue);
 }
 
@@ -191,7 +193,6 @@ strong {
 
 /* articles boxes */
 #artB1 {
-    box-shadow: 5px 0px #fff;
     border-radius: 0;
     
     /* explicação do super cálculo efetuado abaixo
@@ -220,10 +221,10 @@ strong {
 }
 
 #artB3 {
-    border-radius: 400px 0px 0px 400px;
+    border-radius: 0px;
     text-align: right;
 
-    box-shadow: -10px 0px var(--orange);
+    box-shadow: 0px 5px 2px var(--orange);
 }
 
 /* footer */
