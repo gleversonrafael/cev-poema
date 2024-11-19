@@ -1,0 +1,259 @@
+@charset "UTF-8";
+@font-face {
+    font-family: "cl-bold";
+    src: url(../media/fonts/coolvetica/coolvetica-bold.otf);
+}
+
+@font-face {
+    font-family: "holmesh";
+    src: url(../media/fonts/holmesh/Holmesh.otf);
+}
+
+* {
+    margin: 0px;
+    padding: 0px;
+}
+
+/* fonts and general*/
+:root {
+    --regblack: #181818;
+    --medblack: #222;
+    --darkblue: #274659;
+    --regblue: #5A6FC2;
+    --violet: #CC92E2;
+    --orange: #FFB03B;
+
+    --cl-bold: "cl-bold";
+    --regf: "holmesh";
+    /* corrigir + footer */
+}
+
+p {
+    font-weight: 200;
+    font-family: var(--cl-bold);
+} 
+
+strong {
+    color: var(--violet);
+}
+
+.sStrong {
+    color: var(--orange);
+}
+
+.width { 
+    width: 100%;
+}
+
+.hheight { /* half height*/ 
+    height: 30vw;
+    min-height: 240px;
+}
+
+.fheight {
+    height: 60vw;
+    
+    min-height: 480px;
+}
+
+.sepP { /* separate paragraph */
+    display: inline-block;
+    margin-top: 3vw;
+}
+
+/* header */
+#mainh {
+    display: flex;
+
+    color: #fff;
+    background-color: var(--regblack);
+    
+    min-height: 70px;
+    height: 10vw;
+    padding: 1.5vw 0px;
+
+    align-items: center;
+    justify-content: center;
+}
+
+#mainh > section > h1 {
+    font: normal normal max(6vw, 30px) var(--cl-bold);
+
+    text-shadow: 1px 1px 5px #ffffff68;
+}
+
+#mainh > section > h2 {
+    font: normal 300 max(1.5vw, 15px) var(--cl-bold);
+    text-align: right;
+    color: var(--violet);
+}
+
+#mainh > section > h2 > a {
+    color: var(--violet);
+    text-decoration: none;
+}
+
+#mainh > section > h2 > a:hover {
+    color: var(--orange);
+    transition-duration: 250ms;
+}
+
+/* horizontal rows */
+.hrPreset {
+    height: 0.25vw;
+    border: none;
+}
+
+#hrM { 
+    background-color: #fff;
+}
+
+#hrF {
+    background-color: var(--orange);
+}
+
+/* imgs and sections */
+.valign-flex {
+    display: flex;
+    align-items: center;
+}
+
+.rflex {
+    justify-content: right;
+}
+
+/* images */
+.imgP {
+    background: var(--medblack) no-repeat;
+    background-size: cover;
+    background-attachment: fixed;
+}
+
+#imgA {
+    background-image: url(../media/img/f-start.jpg);
+    background-position: top center;
+}
+
+#imgA > article > p:first-child::first-letter {
+    font: italic normal 2em ;
+}
+
+#imgB {
+    background-image: url(../media/img/.jpg);
+    background-position: bottom left;
+}
+
+#sectB1 {
+    background-color: var(--medblack);
+    align-self: start;
+}
+
+.sectB2-type {
+    background-color: var(--regblack);
+}
+
+/* articles */
+.patArt { /* art pattern */
+    padding: max(4vw, 25px);
+    border-radius: 5px;
+
+    font-size: max(2.5vw, 15px);
+    letter-spacing: 0.1vw;
+    /* font-size: 2.5vw; -> responsive font*/
+   
+    height: 30vw;
+    width: 30vw;
+
+    min-width: 200px;
+    min-height: 200px;
+}
+
+.imgArt {
+    background-color: #ffffffed;
+    color: var(--darkblue);
+}
+
+.regArt {
+    color: #fff;
+}
+
+#sArt { /* second article */
+    position: absolute;
+    padding-top: 0px;
+
+    height: auto;
+}
+
+#fArt { /* final article*/
+    height: auto;
+    min-height: 50px;
+}
+
+/* articles boxes */
+#artB1 {
+    box-shadow: 5px 0px #fff;
+    border-radius: 0;
+    
+    /* explicação do super cálculo efetuado abaixo
+    a- cada padding mede, regularmente, 4vw, assim como o tamanho da imagem é 60vw;
+    a1- logo, o tamanho regular dessa caixa é 60vw - (2x4)vw;
+
+    b- procedimento análogo para min-height, contudo sob as diferenças de que:
+    
+    b2- min-height(img) = 480px;
+    b3- min padding = 25px;
+    
+    b4- portanto, min-height da caixa = 480px - (2x25)px = 350px; */
+
+    height: 52vw;
+    min-height: 430px;
+
+    min-width: 120px; /* ou 140px */
+
+    /* ERRO : TENTAR ARRUMAR QUANDO ADQUIRIR MAIS EXPERIÊNCIA.
+    A partir de uma largura de tela igual ou menor que 820, e maior que 700, uma porção desse bloco (possivelmente o padding) flutuará mais que o valor pré-determinado com os cálculos
+    -> Creio que tal erro seja originado do próprio CSS.
+    -> Relacionado ao valor do min-height (430px);
+
+    .
+    */
+}
+
+#artB3 {
+    border-radius: 400px 0px 0px 400px;
+    text-align: right;
+
+    box-shadow: -10px 0px var(--orange);
+}
+
+/* footer */
+#mainf {
+    background-color: var(--darkblue);
+    
+    height: 5vw;
+    min-height: 50px;
+
+    padding: 1vw 0;
+
+    font-family: var(--regf);
+    justify-content: center;
+}
+
+#mainf > article > h1 {
+    color: #fff;
+    font-size: max(1vw, 12px);
+}
+
+#mainf > article > h2 {
+    color: #ffffffdc;
+
+    font-size: max(0.8vw, 10px);
+    text-align: center;
+}
+
+#imagem {
+    background-image: url();
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: top bottom;
+}
