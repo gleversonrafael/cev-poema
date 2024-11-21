@@ -14,6 +14,8 @@
     padding: 0px;
 }
 
+
+
 /* fonts and general*/
 :root {
     --regblack: #181818;
@@ -56,10 +58,19 @@ strong {
     min-height: 480px;
 }
 
-.sepP { /* separate paragraph */
-    display: inline-block;
-    margin-top: 3vw;
+
+
+/* others */
+.valign-flex {
+    display: flex;
+    align-items: center;
 }
+
+.rflex {
+    justify-content: right;
+}
+
+
 
 /* header */
 #mainh {
@@ -67,23 +78,24 @@ strong {
 
     color: #fff;
     background-color: var(--regblack);
+
+    max-height: 15vh;
+    min-height: fit-content;
     
-    min-height: 70px;
-    height: 10vw;
-    padding: 1.5vw 0px;
+    padding: 5vh 0px;
 
     align-items: center;
     justify-content: center;
 }
 
 #mainh > section > h1 {
-    font: normal normal max(6vw, 30px) var(--cl-bold);
+    font: normal normal max(10vh, 30px) var(--cl-bold);
 
     text-shadow: 1px 1px 5px #ffffff68;
 }
 
 #mainh > section > h2 {
-    font: normal 300 max(1.5vw, 15px) var(--cl-bold);
+    font: normal 300 max(3vh, 10px) var(--cl-bold);
     text-align: right;
     color: var(--violet);
 }
@@ -98,29 +110,40 @@ strong {
     transition-duration: 250ms;
 }
 
-/* horizontal rows */
+
+
+/* horizontal rows and separate paragraph*/
 .hrPreset {
     height: 0.25vw;
     border: none;
-}
-
-#hrM { 
-    background-color: #fff;
 }
 
 #hrF {
     background-color: var(--orange);
 }
 
-/* imgs and sections */
-.valign-flex {
-    display: flex;
-    align-items: center;
+.sepP {
+    display: inline-block;
+    margin-top: 20px; 
 }
 
-.rflex {
-    justify-content: right;
+
+
+/* sections */
+#sectB1 { /* section block */
+    background-color: var(--medblack);
+    align-self: start;
 }
+    
+#sectB2 {
+    background-color: var(--medblack);
+}
+
+#sectB3 {
+    background-color: var(--regblack);
+}
+
+
 
 /* images */
 .imgP {
@@ -128,16 +151,12 @@ strong {
     background-size: cover;
     background-attachment: fixed;
 
-    box-shadow: inset 2px 2px 50px #000000a3;
+    box-shadow: inset 2px 2px 100px #000000a3;
 }
 
 #imgA {
-    background-image: url(../media/img/f-start.jpg);
-    background-position: top center;
-}
-
-#imgA > article > p:first-child::first-letter {
-    font: italic normal 2em ;
+    background-image: url(/media/img/f-space.jpg);
+    background-position: top right;
 }
 
 #imgB {
@@ -145,91 +164,47 @@ strong {
     background-position: bottom left;
 }
 
-#sectB1 {
-    background-color: var(--medblack);
-    align-self: start;
-}
 
-.sectB2-type {
-    background-color: var(--regblack);
-}
 
 /* articles */
-.patArt { /* art pattern */
-    padding: max(4vw, 25px);
-    border-radius: 5px;
-
-    font-size: max(2.5vw, 15px);
-    letter-spacing: 0.1vw;
-    /* font-size: 2.5vw; -> responsive font*/
-   
-    height: 30vw;
-    width: 30vw;
-
-    min-width: 200px;
-    min-height: 200px;
-}
-
-.imgArt {
-    background-color: #ffffffe9;
-    color: var(--darkblue);
-}
-
-.regArt {
+.patArt { /* article pattern */
     color: #fff;
+    font-size: max(3.5vw, 20px);
+    padding: 2.5em 1em;
+    line-height: 1.5em;
+    
+    width: fit-content;
+    max-width: 50vw;
 }
 
-#sArt { /* second article */
-    position: absolute;
-    padding-top: 0px;
-
-    height: auto;
+.patArt > p {
+    display: inline-block;
 }
 
 #fArt { /* final article*/
-    height: auto;
-    min-height: 50px;
+    color: #222;
 }
 
+
+
 /* articles boxes */
-#artB1 {
-    border-radius: 0;
-    
-    /* explicação do super cálculo efetuado abaixo
-    a- cada padding mede, regularmente, 4vw, assim como o tamanho da imagem é 60vw;
-    a1- logo, o tamanho regular dessa caixa é 60vw - (2x4)vw;
-
-    b- procedimento análogo para min-height, contudo sob as diferenças de que:
-    
-    b2- min-height(img) = 480px;
-    b3- min padding = 25px;
-    
-    b4- portanto, min-height da caixa = 480px - (2x25)px = 350px; */
-
-    height: 52vw;
-    min-height: 430px;
-
-    min-width: 120px; /* ou 140px */
-
-    /* ERRO : TENTAR ARRUMAR QUANDO ADQUIRIR MAIS EXPERIÊNCIA.
-    A partir de uma largura de tela igual ou menor que 820, e maior que 700, uma porção desse bloco (possivelmente o padding) flutuará mais que o valor pré-determinado com os cálculos
-    -> Creio que tal erro seja originado do próprio CSS.
-    -> Relacionado ao valor do min-height (430px);
-
-    .
-    */
+#artB1 {    
+    color: #b670cf;
+    background-image: linear-gradient(90deg, #222, #2222227a, #22222262);
 }
 
 #artB3 {
-    border-radius: 0px;
-    text-align: right;
+    color: #ff8d21;
 
-    box-shadow: 0px 5px 2px var(--orange);
+    background-image: linear-gradient(90deg, transparent, #18181888, #181818 60%);
+    text-align: right;
 }
+
+
 
 /* footer */
 #mainf {
-    background-color: var(--darkblue);
+    background-color: #f3f3f3;
     
     height: 5vw;
     min-height: 50px;
@@ -241,20 +216,10 @@ strong {
 }
 
 #mainf > article > h1 {
-    color: #fff;
     font-size: max(1vw, 12px);
 }
 
 #mainf > article > h2 {
-    color: #ffffffdc;
-
     font-size: max(0.8vw, 10px);
     text-align: center;
-}
-
-#imagem {
-    background-image: url();
-    background-repeat: no-repeat;
-    background-size: cover;
-    background-position: top bottom;
 }
